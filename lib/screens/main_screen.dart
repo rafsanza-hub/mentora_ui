@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:mentora/controllers/main_controller.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/screens/home_screen.dart';
+import 'package:mentora/screens/my_learning_screen.dart';
 
 class MainScreen extends GetView<MainController> {
   const MainScreen({super.key});
@@ -56,7 +57,7 @@ class MainScreen extends GetView<MainController> {
           index: controller.currentIndex.value,
           children: [
             HomeScreen(),
-            HomeScreen(),
+            MyLearning(),
             HomeScreen(),
             HomeScreen(),
           ],

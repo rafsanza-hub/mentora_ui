@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AppTextStyles {
@@ -12,7 +11,7 @@ class AppTextStyles {
     height: 13 / 11,
     letterSpacing: 0.07,
   );
-  
+
   static const TextStyle caption2Bold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -28,7 +27,7 @@ class AppTextStyles {
     fontSize: 12,
     height: 16 / 12,
   );
-  
+
   static const TextStyle caption1Bold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w500,
@@ -44,7 +43,7 @@ class AppTextStyles {
     height: 18 / 13,
     letterSpacing: -0.08,
   );
-  
+
   static const TextStyle footnoteBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -61,7 +60,7 @@ class AppTextStyles {
     height: 20 / 15,
     letterSpacing: -0.24,
   );
-  
+
   static const TextStyle subheadlineBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -78,7 +77,7 @@ class AppTextStyles {
     height: 21 / 16,
     letterSpacing: -0.32,
   );
-  
+
   static const TextStyle calloutBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -95,7 +94,7 @@ class AppTextStyles {
     height: 22 / 17,
     letterSpacing: -0.41,
   );
-  
+
   static const TextStyle bodyBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -112,7 +111,7 @@ class AppTextStyles {
     height: 22 / 17,
     letterSpacing: -0.41,
   );
-  
+
   static const TextStyle headlineBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -129,7 +128,7 @@ class AppTextStyles {
     height: 25 / 20,
     letterSpacing: 0.38,
   );
-  
+
   static const TextStyle title3Bold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.w600,
@@ -146,7 +145,7 @@ class AppTextStyles {
     height: 28 / 22,
     letterSpacing: 0.35,
   );
-  
+
   static const TextStyle title2Bold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.bold,
@@ -163,7 +162,7 @@ class AppTextStyles {
     height: 34 / 28,
     letterSpacing: 0.36,
   );
-  
+
   static const TextStyle title1Bold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.bold,
@@ -180,7 +179,7 @@ class AppTextStyles {
     height: 41 / 34,
     letterSpacing: 0.37,
   );
-  
+
   static const TextStyle largeTitleBold = TextStyle(
     fontFamily: 'SF Pro Text',
     fontWeight: FontWeight.bold,
