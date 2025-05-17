@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 
@@ -20,11 +21,11 @@ class DetailCourseScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: const Icon(Iconsax.arrow_left_2_copy, size: 24),
+                      icon: const Icon(IconlyBold.arrowLeft, size: 24),
                       onPressed: () => Navigator.pop(context),
                     ),
                     IconButton(
-                      icon: const Icon(Iconsax.heart_copy, size: 24),
+                      icon: const Icon(IconlyBold.tickSquare, size: 24),
                       onPressed: () {},
                     ),
                   ],
@@ -86,23 +87,23 @@ class DetailCourseScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    const Icon(Iconsax.star_1_copy,
+                    const Icon(IconlyBold.star,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
                     Text('4.7', style: AppTextStyles.footnoteRegular),
                     const SizedBox(width: 8),
-                    const Icon(Iconsax.profile_2user_copy,
+                    const Icon(IconlyBold.profile,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
                     Text('235', style: AppTextStyles.footnoteRegular),
                     const SizedBox(width: 8),
-                    const Icon(Iconsax.message_text_copy,
+                    const Icon(IconlyBold.message,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
                     Text('Grup Discussion',
                         style: AppTextStyles.footnoteRegular),
                     const SizedBox(width: 8),
-                    const Icon(Iconsax.book_saved_copy,
+                    const Icon(IconlyBold.bookmark,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
                     Text('Saved Materi', style: AppTextStyles.footnoteRegular),
@@ -251,7 +252,7 @@ class DetailCourseScreen extends StatelessWidget {
             style: AppTextStyles.footnoteBold,
           ),
           Icon(
-            isExpanded ? Iconsax.arrow_down_1_copy : Iconsax.arrow_right_2_copy,
+            isExpanded ? IconlyBold.arrowDown2 : IconlyBold.arrowRight2,
             size: 14,
             color: AppColors.greyText,
           ),

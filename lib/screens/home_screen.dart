@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/detail_course_screen.dart';
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Spacer(),
                     Icon(
-                      Iconsax.notification_copy,
+                      IconlyLight.notification,
                       color: Colors.black,
                       size: 24,
                     ),
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                         color: AppColors.greyPrimary,
                       ),
                       suffixIcon: const Icon(
-                        Iconsax.search_normal_1_copy,
+                        IconlyLight.search,
                         color: AppColors.greyPrimary,
                       ),
                       suffixIconConstraints: const BoxConstraints(
@@ -283,7 +283,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Row(children: [
                 Icon(
-                  Iconsax.profile_2user_copy,
+                  IconlyLight.user3,
                   color: AppColors.primary,
                   size: 14,
                 ),
