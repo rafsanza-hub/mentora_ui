@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/detail_course_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 22),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,6 +23,7 @@ class HomeScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: 20,
                       backgroundColor: Colors.blue,
+                      backgroundImage: AssetImage('assets/images/avatar.png'),
                     ),
                     SizedBox(width: 12),
                     Text(
@@ -95,6 +98,8 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
+                        child: Image(
+                            image: AssetImage('assets/images/Banner.png')),
                       ),
                       SizedBox(width: 12),
                       Container(
@@ -111,6 +116,8 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
+                        child: Image(
+                            image: AssetImage('assets/images/Banner.png')),
                       ),
                     ],
                   ),
@@ -233,61 +240,68 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Container _buildCard(
+  Widget _buildCard(
       String title, String image, String totalMember, String price) {
-    return Container(
-      height: 148.19,
-      width: 149,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.black.withOpacity(0.1),
-        //     blurRadius: 10,
-        //     offset: Offset(0, 0),
-        //   ),
-        // ],
+    return GestureDetector(
+      onTap: () => Get.to(
+        DetailCourseScreen(),
+        transition: Transition.rightToLeft,
+        duration: const Duration(milliseconds: 500),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(6),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 94.19,
-              width: 137,
-              decoration: BoxDecoration(
-                color: AppColors.greyPrimary,
-                borderRadius: BorderRadius.circular(6.85),
-              ),
-              child: Image(fit: BoxFit.cover, image: AssetImage(image)),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              style: AppTextStyles.caption1Bold,
-            ),
-            Row(children: [
-              Icon(
-                Iconsax.profile_2user_copy,
-                color: AppColors.primary,
-                size: 14,
-              ),
-              SizedBox(width: 2),
-              Text(
-                totalMember,
-                style: AppTextStyles.caption2Regular.copyWith(
-                  color: AppColors.greyText,
+      child: Container(
+        height: 148.19,
+        width: 149,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.black.withOpacity(0.1),
+          //     blurRadius: 10,
+          //     offset: Offset(0, 0),
+          //   ),
+          // ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(6),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 94.19,
+                width: 137,
+                decoration: BoxDecoration(
+                  color: AppColors.greyPrimary,
+                  borderRadius: BorderRadius.circular(6.85),
                 ),
+                child: Image(fit: BoxFit.cover, image: AssetImage(image)),
               ),
-              Spacer(),
-              Text('\$ $price',
-                  style: AppTextStyles.footnoteBold.copyWith(
-                    color: AppColors.black,
-                  )),
-            ]),
-          ],
+              const SizedBox(height: 8),
+              Text(
+                title,
+                style: AppTextStyles.caption1Bold,
+              ),
+              Row(children: [
+                Icon(
+                  Iconsax.profile_2user_copy,
+                  color: AppColors.primary,
+                  size: 14,
+                ),
+                SizedBox(width: 2),
+                Text(
+                  totalMember,
+                  style: AppTextStyles.caption2Regular.copyWith(
+                    color: AppColors.greyText,
+                  ),
+                ),
+                Spacer(),
+                Text('\$ $price',
+                    style: AppTextStyles.footnoteBold.copyWith(
+                      color: AppColors.black,
+                    )),
+              ]),
+            ],
+          ),
         ),
       ),
     );
