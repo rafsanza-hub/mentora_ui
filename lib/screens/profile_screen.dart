@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/edit_profile_scree.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -52,17 +54,19 @@ class ProfileScreen extends StatelessWidget {
                     color: AppColors.greyText,
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 2),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(EditProfileScreen());
+                  },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    elevation: 10,
+                    minimumSize: const Size(0, 0),
+                    elevation: 1,
                     shadowColor: Colors.black.withOpacity(0.1),
                   ),
                   child: Text(
@@ -72,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(

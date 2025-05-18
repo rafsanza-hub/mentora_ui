@@ -8,12 +8,15 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
-          textStyle: AppTextStyles.bodyBold.copyWith(color: Colors.white),
+          textStyle: AppTextStyles.bodyBold.copyWith(
+            color: Colors.white,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
           elevation: 1,
           shadowColor: AppColors.primary.withOpacity(0.1),
+          minimumSize: const Size(double.infinity, 56),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -23,6 +26,7 @@ class AppTheme {
             borderRadius: BorderRadius.circular(8),
           ),
           textStyle: AppTextStyles.bodyBold.copyWith(color: AppColors.primary),
+          minimumSize: const Size(double.infinity, 56),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
