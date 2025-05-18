@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/edit_profile_scree.dart';
+import 'package:mentora/screens/login_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -157,7 +158,9 @@ class ProfileScreen extends StatelessWidget {
                   icon: IconlyLight.logout,
                   title: 'Log Out',
                   textColor: AppColors.greyPrimary,
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(LoginScreen());
+                  },
                 ),
               ],
             ),

@@ -14,8 +14,8 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
-          elevation: 1,
-          shadowColor: AppColors.primary.withOpacity(0.1),
+          elevation: 10,
+          shadowColor: AppColors.primary.withOpacity(0.3),
           minimumSize: const Size(double.infinity, 56),
         ),
       ),
