@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/detail_course_screen.dart';
+import 'package:mentora/widgets/app_chip.dart';
+import 'package:mentora/widgets/app_search_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,40 +46,7 @@ class HomeScreen extends StatelessWidget {
                   style: AppTextStyles.title2Bold,
                 ),
                 const SizedBox(height: 16),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  width: double.infinity,
-                  height: 49,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 10,
-                        offset: Offset(0, 0),
-                      ),
-                    ],
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search course here ...',
-                      hintStyle: AppTextStyles.caption1Regular.copyWith(
-                        fontSize: 13,
-                        color: AppColors.greyPrimary,
-                      ),
-                      suffixIcon: const Icon(
-                        IconlyLight.search,
-                        color: AppColors.greyPrimary,
-                      ),
-                      suffixIconConstraints: const BoxConstraints(
-                        minWidth: 0,
-                        minHeight: 0,
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
+                AppSearchField(hintText: 'Search course here ...'),
                 const SizedBox(height: 13),
                 SizedBox(
                   height: 100,
@@ -128,17 +97,17 @@ class HomeScreen extends StatelessWidget {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      _buildChip('All'),
+                      AppChip('All', isSelected: true),
                       const SizedBox(width: 6),
-                      _buildChip('Programming'),
+                      AppChip('Programming', isSelected: false),
                       const SizedBox(width: 6),
-                      _buildChip('UI / UX Designer'),
+                      AppChip('UI / UX Designer', isSelected: false),
                       const SizedBox(width: 6),
-                      _buildChip('Data Sience'),
+                      AppChip('Data Sience', isSelected: false),
                       const SizedBox(width: 6),
-                      _buildChip('Machine Learning'),
+                      AppChip('Machine Learning', isSelected: false),
                       const SizedBox(width: 6),
-                      _buildChip('Architecture'),
+                      AppChip('Architecture', isSelected: false),
                     ],
                   ),
                 ),
@@ -304,25 +273,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  ChoiceChip _buildChip(String title) {
-    return ChoiceChip(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      label: Text(title),
-      selected: false,
-      onSelected: (selected) {},
-      showCheckmark: false,
-      selectedColor: AppColors.primary,
-      backgroundColor: AppColors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: const BorderSide(color: Colors.transparent, width: 0),
-      ),
-      elevation: 10,
-      shadowColor: Colors.black.withOpacity(0.1),
-      labelStyle: AppTextStyles.footnoteRegular,
     );
   }
 }

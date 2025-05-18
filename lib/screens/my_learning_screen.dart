@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/my_learning_bootcamp_screen.dart';
+import 'package:mentora/widgets/app_chip.dart';
+import 'package:mentora/widgets/learning_item.dart';
 
-class MyLearning extends StatelessWidget {
-  const MyLearning({super.key});
+class MyLearningScreen extends StatelessWidget {
+  const MyLearningScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +35,9 @@ class MyLearning extends StatelessWidget {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      _buildChip('Unfinished', isSelected: true),
+                      AppChip('Unfinished', isSelected: true),
                       const SizedBox(width: 12),
-                      _buildChip('Finish', isSelected: false),
+                      AppChip('Finish', isSelected: false),
                     ],
                   ),
                 ),
@@ -45,16 +49,20 @@ class MyLearning extends StatelessWidget {
                       'Course',
                       style: AppTextStyles.bodyBold,
                     ),
-                    Text(
-                      'See all',
-                      style: AppTextStyles.caption1Regular.copyWith(
-                        color: AppColors.greySecondary,
-                      ),
-                    ),
+                    TextButton(
+                        child: Text(
+                          'See all',
+                          style: AppTextStyles.caption1Regular.copyWith(
+                            color: AppColors.greySecondary,
+                          ),
+                        ),
+                        onPressed: () {
+                          Get.to(() => const MyLearningBootcampScreen());
+                        }),
                   ],
                 ),
                 const SizedBox(height: 12),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Free',
@@ -64,7 +72,7 @@ class MyLearning extends StatelessWidget {
                       'HTML and CSS are the two basic technologies in website creation.',
                 ),
                 const SizedBox(height: 6),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Premium',
@@ -74,7 +82,7 @@ class MyLearning extends StatelessWidget {
                       'HTML and CSS are the two basic technologies in website creation.',
                 ),
                 const SizedBox(height: 6),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Premium',
@@ -100,7 +108,7 @@ class MyLearning extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Free',
@@ -110,7 +118,7 @@ class MyLearning extends StatelessWidget {
                       'HTML and CSS are the two basic technologies in website creation.',
                 ),
                 const SizedBox(height: 6),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Premium',
@@ -120,7 +128,7 @@ class MyLearning extends StatelessWidget {
                       'HTML and CSS are the two basic technologies in website creation.',
                 ),
                 const SizedBox(height: 6),
-                _buildCourseCard(
+                LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Premium',
@@ -133,112 +141,6 @@ class MyLearning extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildChip(String title, {required bool isSelected}) {
-    return ChoiceChip(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      label: Text(title),
-      selected: isSelected,
-      onSelected: (selected) {},
-      showCheckmark: false,
-      selectedColor: AppColors.primary,
-      backgroundColor: AppColors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: const BorderSide(color: Colors.transparent, width: 0),
-      ),
-      elevation: 10,
-      shadowColor: Colors.black.withOpacity(0.1),
-      labelStyle: isSelected
-          ? AppTextStyles.footnoteBold.copyWith(color: Colors.white)
-          : AppTextStyles.footnoteRegular,
-    );
-  }
-
-  Widget _buildCourseCard({
-    required String title,
-    required String imageUrl,
-    required String type,
-    required Color typeColor,
-    required String chapters,
-    required String description,
-  }) {
-    return Container(
-      // padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-          // color: Colors.white,
-          // borderRadius: BorderRadius.circular(8),
-          ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 65,
-            height: 65,
-            decoration: BoxDecoration(
-              color: AppColors.background,
-            ),
-            child: Image.asset(
-              imageUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: typeColor,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        type,
-                        style: AppTextStyles.caption2Regular.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: AppColors.background,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        chapters,
-                        style: AppTextStyles.caption2Regular,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  title,
-                  style: AppTextStyles.calloutBold,
-                ),
-                Text(
-                  description,
-                  style: AppTextStyles.caption2Regular.copyWith(
-                    color: AppColors.greyText,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

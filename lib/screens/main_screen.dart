@@ -39,11 +39,11 @@ class MainScreen extends GetView<MainController> {
             ),
             BottomNavigationBarItem(
               icon: Icon(IconlyBold.document),
-              label: 'Search',
+              label: 'My Learning',
             ),
             BottomNavigationBarItem(
               icon: Icon(IconlyBold.bookmark),
-              label: 'Notifications',
+              label: 'Bookmark',
             ),
             BottomNavigationBarItem(
               icon: Icon(IconlyBold.profile),
@@ -57,7 +57,7 @@ class MainScreen extends GetView<MainController> {
           index: controller.currentIndex.value,
           children: [
             HomeScreen(),
-            MyLearning(),
+            MyLearningScreen(),
             HomeScreen(),
             HomeScreen(),
           ],

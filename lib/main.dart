@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentora/controllers/main_controller.dart';
-import 'package:mentora/screens/home_screen.dart';
 import 'package:mentora/screens/main_screen.dart';
 
 void main() {
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: MainScreen(),
-      
     );
   }
 }
