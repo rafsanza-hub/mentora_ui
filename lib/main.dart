@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentora/controllers/main_controller.dart';
+import 'package:mentora/core/theme/app_theme.dart';
 import 'package:mentora/screens/main_screen.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: AppTheme.lightTheme(),
       home: MainScreen(),
     );
   }
