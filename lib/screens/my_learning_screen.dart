@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/my_learning_bootcamp_screen.dart';
+import 'package:mentora/screens/my_learning_course_screen.dart';
 import 'package:mentora/widgets/app_chip.dart';
 import 'package:mentora/widgets/learning_item.dart';
 
@@ -57,7 +58,9 @@ class MyLearningScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Get.to(() => const MyLearningBootcampScreen());
+                          Get.to(() => const MyLearningCourseScreen(),
+                              transition: Transition.rightToLeft,
+                              duration: const Duration(milliseconds: 500));
                         }),
                   ],
                 ),
@@ -99,11 +102,18 @@ class MyLearningScreen extends StatelessWidget {
                       'Bootcamp',
                       style: AppTextStyles.subheadlineBold,
                     ),
-                    Text(
-                      'See all',
-                      style: AppTextStyles.caption1Regular.copyWith(
-                        color: AppColors.greySecondary,
+                    TextButton(
+                      child: Text(
+                        'See all',
+                        style: AppTextStyles.caption1Regular.copyWith(
+                          color: AppColors.greySecondary,
+                        ),
                       ),
+                      onPressed: () {
+                        Get.to(() => const MyLearningBootcampScreen(),
+                            transition: Transition.rightToLeft,
+                            duration: const Duration(milliseconds: 500));
+                      },
                     ),
                   ],
                 ),

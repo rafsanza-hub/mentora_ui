@@ -6,8 +6,8 @@ import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/widgets/app_search_field.dart';
 import 'package:mentora/widgets/learning_item.dart';
 
-class MyLearningBootcampScreen extends StatelessWidget {
-  const MyLearningBootcampScreen({super.key});
+class MyLearningCourseScreen extends StatelessWidget {
+  const MyLearningCourseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MyLearningBootcampScreen extends StatelessWidget {
           icon: const Icon(IconlyBold.arrowLeft2, size: 24),
           onPressed: () => Get.back(),
         ),
-        title: const Text('My Learning Bootcamp'),
+        title: const Text('My Learning Course'),
         centerTitle: true,
         elevation: 0,
         titleTextStyle:
@@ -31,7 +31,7 @@ class MyLearningBootcampScreen extends StatelessWidget {
             children: [
               AppSearchField(hintText: 'Search Bootcamp'),
               SizedBox(height: 18),
-              Text('Bootcamp', style: AppTextStyles.bodyBold),
+              Text('Courses', style: AppTextStyles.bodyBold),
               SizedBox(height: 12),
               LearningItem(
                 title: 'Front End HTML, CSS',
