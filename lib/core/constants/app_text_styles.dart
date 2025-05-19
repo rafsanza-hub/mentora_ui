@@ -26,6 +26,7 @@ class AppTextStyles {
     fontWeight: FontWeight.normal,
     fontSize: 12,
     height: 16 / 12,
+    letterSpacing: 0,
   );
 
   static const TextStyle caption1Bold = TextStyle(

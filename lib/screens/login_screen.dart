@@ -3,6 +3,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/forgot_password_screen.dart';
+import 'package:mentora/screens/main_screen.dart';
 import 'package:mentora/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -36,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(IconlyLight.profile),
+                          prefixIcon: Icon(IconlyLight.message),
                           labelText: 'Your Email',
                         ),
                       ),
@@ -48,12 +50,17 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      Text(
-                        'Forgot Password?',
-                        style: AppTextStyles.footnoteRegular.copyWith(
-                          color: AppColors.primary,
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => const ForgotPasswordScreen());
+                        },
+                        child: Text(
+                          'Forgot Password?',
+                          style: AppTextStyles.footnoteRegular.copyWith(
+                            color: AppColors.primary,
+                          ),
+                          textAlign: TextAlign.right,
                         ),
-                        textAlign: TextAlign.right,
                       ),
                       const SizedBox(height: 20),
                       ElevatedButton(
@@ -61,7 +68,9 @@ class LoginScreen extends StatelessWidget {
                           'Login',
                           style: TextStyle(color: AppColors.white),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const MainScreen());
+                        },
                       ),
                       const SizedBox(height: 12),
                       OutlinedButton(
