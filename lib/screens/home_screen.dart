@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/detail_course_screen.dart';
+import 'package:mentora/screens/my_learning_bootcamp_screen.dart';
 import 'package:mentora/widgets/app_chip.dart';
 import 'package:mentora/widgets/app_search_field.dart';
 
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     CircleAvatar(
@@ -51,6 +53,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 100,
                   child: ListView(
+                    clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
                     children: [
                       Container(
@@ -95,6 +98,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 30,
                   child: ListView(
+                    clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
                     children: [
                       AppChip('All', isSelected: true),
@@ -131,6 +135,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 148.19,
                   child: ListView(
+                    clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
                     children: [
                       _buildCard(
@@ -142,14 +147,14 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(width: 6),
                       _buildCard(
                         'Web Development',
-                        'assets/images/image20.png',
+                        'assets/images/image19.png',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Data Science',
-                        'assets/images/image21.png',
+                        'assets/images/image19.png',
                         '10',
                         '20',
                       ),
@@ -160,14 +165,17 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'LearnFlex',
+                      'Bootcamp',
                       style: AppTextStyles.headlineBold,
                     ),
                     Spacer(),
-                    Text(
-                      'See all',
-                      style: AppTextStyles.caption1Regular.copyWith(
-                        color: AppColors.greySecondary,
+                    InkWell(
+                      onTap: () => Get.to(MyLearningBootcampScreen()),
+                      child: Text(
+                        'See all',
+                        style: AppTextStyles.caption1Regular.copyWith(
+                          color: AppColors.greySecondary,
+                        ),
                       ),
                     ),
                   ],
@@ -176,6 +184,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 148.19,
                   child: ListView(
+                    clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
                     children: [
                       _buildCard(
@@ -187,14 +196,14 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(width: 6),
                       _buildCard(
                         'Web Development',
-                        'assets/images/image20.png',
+                        'assets/images/image19.png',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Data Science',
-                        'assets/images/image21.png',
+                        'assets/images/image19.png',
                         '10',
                         '20',
                       ),
@@ -223,13 +232,13 @@ class HomeScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.black.withOpacity(0.1),
-          //     blurRadius: 10,
-          //     offset: Offset(0, 0),
-          //   ),
-          // ],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: Offset(0, 0),
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(6),

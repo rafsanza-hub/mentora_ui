@@ -37,6 +37,7 @@ class AppSearchField extends StatelessWidget {
         controller: controller,
         onSubmitted: onSubmitted,
         onChanged: onChanged,
+        style: AppTextStyles.caption1Regular,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: AppTextStyles.caption1Regular.copyWith(
@@ -52,6 +53,10 @@ class AppSearchField extends StatelessWidget {
             minHeight: 0,
           ),
           border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
         ),
       ),
     );

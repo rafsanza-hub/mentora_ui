@@ -5,6 +5,7 @@ import 'package:mentora/core/constants/app_text_styles.dart';
 class AppTheme {
   static ThemeData lightTheme() {
     return ThemeData(
+      scaffoldBackgroundColor: AppColors.white,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,

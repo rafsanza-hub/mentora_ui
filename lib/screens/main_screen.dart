@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:mentora/controllers/main_controller.dart';
 import 'package:mentora/core/constants/app_colors.dart';
+import 'package:mentora/screens/bookmark_screen.dart';
 import 'package:mentora/screens/home_screen.dart';
 import 'package:mentora/screens/my_learning_screen.dart';
 import 'package:mentora/screens/profile_screen.dart';
@@ -59,7 +60,7 @@ class MainScreen extends GetView<MainController> {
           children: [
             HomeScreen(),
             MyLearningScreen(),
-            HomeScreen(),
+            BookmarkScreen(),
             ProfileScreen(),
           ],
         ),
