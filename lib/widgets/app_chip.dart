@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mentora/core/constants/app_colors.dart';
-import 'package:mentora/core/constants/app_text_styles.dart';
 
 class AppChip extends StatelessWidget {
   final String title;
@@ -13,23 +12,43 @@ class AppChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChoiceChip(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      label: Text(title),
-      selected: isSelected,
-      onSelected: (selected) {},
-      showCheckmark: false,
-      selectedColor: AppColors.primary,
-      backgroundColor: AppColors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: const BorderSide(color: Colors.transparent, width: 0),
-      ),
-      elevation: 10,
-      shadowColor: Colors.black.withOpacity(0.1),
-      labelStyle: isSelected
-          ? AppTextStyles.footnoteBold.copyWith(color: Colors.white)
-          : AppTextStyles.footnoteRegular,
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: ShapeDecoration(
+            color: isSelected ? AppColors.primary : Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shadows: [
+              BoxShadow(
+                color: Color(0x19000000),
+                blurRadius: 10,
+                offset: Offset(0, 0),
+                spreadRadius: 0,
+              )
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: isSelected ? Colors.white : Color(0xFF2E2E2E),
+                  fontSize: 13,
+                  fontFamily: 'SF Pro Display',
+                  fontWeight: FontWeight.w400,
+                  height: 1.38,
+                  letterSpacing: -0.08,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

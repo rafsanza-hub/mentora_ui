@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:get/get.dart';
 
 import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/payment_method_screen.dart';
 
 class DetailCourseScreen extends StatelessWidget {
   const DetailCourseScreen({super.key});
@@ -26,7 +28,9 @@ class DetailCourseScreen extends StatelessWidget {
                     ),
                     IconButton(
                       icon: const Icon(IconlyBold.tickSquare, size: 24),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(PaymentMethodScreen());
+                      },
                     ),
                   ],
                 ),
