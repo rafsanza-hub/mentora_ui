@@ -47,6 +47,7 @@ class AppSearchField extends StatelessWidget {
           suffixIcon: const Icon(
             IconlyLight.search,
             color: AppColors.greyPrimary,
+            size: 19,
           ),
           suffixIconConstraints: const BoxConstraints(
             minWidth: 0,

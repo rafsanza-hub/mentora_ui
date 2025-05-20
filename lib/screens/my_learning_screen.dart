@@ -50,14 +50,14 @@ class MyLearningScreen extends StatelessWidget {
                       'Course',
                       style: AppTextStyles.bodyBold,
                     ),
-                    TextButton(
+                    InkWell(
                         child: Text(
                           'See all',
                           style: AppTextStyles.caption1Regular.copyWith(
                             color: AppColors.greySecondary,
                           ),
                         ),
-                        onPressed: () {
+                        onTap: () {
                           Get.to(() => const MyLearningCourseScreen(),
                               transition: Transition.rightToLeft,
                               duration: const Duration(milliseconds: 500));
@@ -102,14 +102,14 @@ class MyLearningScreen extends StatelessWidget {
                       'Bootcamp',
                       style: AppTextStyles.subheadlineBold,
                     ),
-                    TextButton(
+                    InkWell(
                       child: Text(
                         'See all',
                         style: AppTextStyles.caption1Regular.copyWith(
                           color: AppColors.greySecondary,
                         ),
                       ),
-                      onPressed: () {
+                      onTap: () {
                         Get.to(() => const MyLearningBootcampScreen(),
                             transition: Transition.rightToLeft,
                             duration: const Duration(milliseconds: 500));

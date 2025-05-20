@@ -5,6 +5,7 @@ import 'package:mentora/core/constants/app_colors.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/detail_course_screen.dart';
 import 'package:mentora/screens/my_learning_bootcamp_screen.dart';
+import 'package:mentora/screens/notification_screen.dart';
 import 'package:mentora/widgets/app_chip.dart';
 import 'package:mentora/widgets/app_search_field.dart';
 
@@ -35,10 +36,15 @@ class HomeScreen extends StatelessWidget {
                       style: AppTextStyles.footnoteBold,
                     ),
                     Spacer(),
-                    Icon(
-                      IconlyLight.notification,
-                      color: Colors.black,
-                      size: 24,
+                    InkWell(
+                      child: Icon(
+                        IconlyLight.notification,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                      onTap: () {
+                        Get.to(() => NotificationScreen());
+                      },
                     ),
                   ],
                 ),

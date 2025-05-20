@@ -42,7 +42,7 @@ class OnboardingScreen extends GetView<OnboardingController> {
               ],
             ),
           ),
-          SizedBox(height: 60),
+          SizedBox(height: 0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: Column(children: [
