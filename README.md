@@ -1,16 +1,66 @@
-# mentora
+# 📱 Flutter UI Kit
 
-A new Flutter project.
 
-## Getting Started
+A modern and responsive UI kit for a course learning application built using Flutter.  
+This project includes fully designed mobile screens suitable for online learning platforms, created with clean and reusable code.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Highlights
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter-based mobile UI kit  
+- Includes 17+ screens and growing  
+- Beautiful and minimal layout  
+- Organized folder structure  
+- Reusable widgets  
+- Ready to integrate with any backend
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+---
+
+## 📸 Screenshots
+
+<p float="left">
+  <img src="assets/screenshots/home.png" width="140" />
+  <img src="assets/screenshots/detail_course.png" width="140" />
+  <img src="assets/screenshots/bookmark.png" width="140" />
+  <img src="assets/screenshots/my_learning.png" width="140" />
+  <img src="assets/screenshots/profile.png" width="140" />
+</p>
+
+
+---
+
+## 📁 Folder Structure
+
+lib/
+
+├── core/
+
+├── controllers/
+
+├── screens/
+
+├── widgets/
+
+└── main.dart
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+git clone https://github.com/your-username/flutter-ui-kit.git
+cd mentora-ui
+flutter pub get
+flutter run
+```
+
+
+
+---
+
+##  🎨 Design Source
+
+Original Figma Design: [LearnConnect UI Kit](https://ui8.net/fahmi-haecal/products/learnconnect---mobile-app-ui-kit)  
+Designed by: [Fahmi Haecal](https://ui8.net/fahmi-haecal)
