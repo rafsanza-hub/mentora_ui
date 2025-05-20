@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mentora/core/constants/app_text_styles.dart';
+import 'package:mentora/screens/payment_method_midtrans_screen.dart';
 import 'package:mentora/widgets/app_chip.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
@@ -43,7 +45,9 @@ class PaymentMethodScreen extends StatelessWidget {
               _buildDetail('Total Price', '\$ 244'),
               const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => PaymentMethodMidtransScreen());
+                },
                 child: Text(
                   'Buy Course by Midtrans',
                   style: AppTextStyles.bodyBold.copyWith(color: Colors.white),
