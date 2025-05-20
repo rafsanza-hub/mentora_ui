@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:mentora/controllers/main_controller.dart';
 import 'package:mentora/core/constants/app_colors.dart';
+import 'package:mentora/core/constants/app_text_styles.dart';
 import 'package:mentora/screens/bookmark_screen.dart';
 import 'package:mentora/screens/home_screen.dart';
 import 'package:mentora/screens/my_learning_screen.dart';
@@ -23,15 +24,9 @@ class MainScreen extends GetView<MainController> {
           },
           type: BottomNavigationBarType.fixed,
           selectedItemColor: AppColors.primary,
-          unselectedItemColor: AppColors.greyPrimary,
-          selectedLabelStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-          ),
-          unselectedLabelStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
+          unselectedItemColor: AppColors.greySecondary,
+          selectedLabelStyle: AppTextStyles.caption2Regular,
+          unselectedLabelStyle: AppTextStyles.caption2Regular,
           iconSize: 24,
           backgroundColor: AppColors.white,
           items: const [

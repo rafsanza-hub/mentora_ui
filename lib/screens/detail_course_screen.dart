@@ -19,42 +19,32 @@ class DetailCourseScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(
-                      icon: const Icon(IconlyBold.arrowLeft, size: 24),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    IconButton(
-                      icon: const Icon(IconlyBold.tickSquare, size: 24),
-                      onPressed: () {
-                        Get.to(PaymentMethodScreen());
-                      },
-                    ),
+                    GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Icon(Icons.arrow_back_outlined, size: 24)),
+                    Icon(Icons.more_horiz, size: 24),
                   ],
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 5),
                 Container(
                   width: double.infinity,
                   height: 218,
                   decoration: BoxDecoration(
                     color: AppColors.greyPrimary,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 10,
-                        offset: const Offset(0, 0),
-                      ),
-                    ],
                   ),
                   child: Stack(
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          "assets/images/image20.jpg",
+                          "assets/images/image19.jpg",
                           fit: BoxFit.cover,
                           width: double.infinity,
                           height: 218,
@@ -68,7 +58,7 @@ class DetailCourseScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 4),
                             decoration: BoxDecoration(
-                              color: AppColors.greySecondary,
+                              color: Color(0xFFF5F5F5),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
@@ -92,25 +82,32 @@ class DetailCourseScreen extends StatelessWidget {
                 Row(
                   children: [
                     const Icon(IconlyBold.star,
+                        size: 14, color: AppColors.yellow),
+                    const SizedBox(width: 4),
+                    Text('4.7',
+                        style: AppTextStyles.footnoteRegular
+                            .copyWith(color: AppColors.greyText)),
+                    const SizedBox(width: 8),
+                    const Icon(IconlyLight.user3,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
-                    Text('4.7', style: AppTextStyles.footnoteRegular),
+                    Text('235',
+                        style: AppTextStyles.footnoteRegular
+                            .copyWith(color: AppColors.greyText)),
                     const SizedBox(width: 8),
-                    const Icon(IconlyBold.profile,
-                        size: 14, color: AppColors.primary),
-                    const SizedBox(width: 4),
-                    Text('235', style: AppTextStyles.footnoteRegular),
-                    const SizedBox(width: 8),
-                    const Icon(IconlyBold.message,
+                    const Icon(IconlyLight.chat,
                         size: 14, color: AppColors.primary),
                     const SizedBox(width: 4),
                     Text('Grup Discussion',
-                        style: AppTextStyles.footnoteRegular),
+                        style: AppTextStyles.footnoteRegular
+                            .copyWith(color: AppColors.greyText)),
                     const SizedBox(width: 8),
-                    const Icon(IconlyBold.bookmark,
-                        size: 14, color: AppColors.primary),
+                    const Icon(IconlyLight.bookmark,
+                        size: 14, color: AppColors.black),
                     const SizedBox(width: 4),
-                    Text('Saved Materi', style: AppTextStyles.footnoteRegular),
+                    Text('Saved Materi',
+                        style: AppTextStyles.footnoteRegular
+                            .copyWith(color: AppColors.greyText)),
                   ],
                 ),
                 const SizedBox(height: 22),
@@ -120,7 +117,7 @@ class DetailCourseScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'HTML and CSS are the two basic technologies in website creation. HTML (HyperText Markup Language) is used to create the structure and content of the website, while CSS (Cascading Style Sheets) is used to set the appearance and layout of the website. With HTML and CSS, we can create cool and visually appealing websites that are easily accessible to users.',
+                  'HTML and CSS are the two basic technologies in website creation. HTML (HyperText Markup Language) is used to create the structure and content of the website, while CSS (Cascading Style Sheets) is used to set layout of the website. With HTML and CSS, we can create cool and visually appealing websites that are easily accessible to users.',
                   style: AppTextStyles.caption1Regular.copyWith(
                     color: AppColors.greyText,
                   ),
@@ -150,7 +147,7 @@ class DetailCourseScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Fahmi Haecal',
+                            'Rafsan Zaini',
                             style: AppTextStyles.footnoteBold,
                           ),
                           Text(
@@ -193,7 +190,7 @@ class DetailCourseScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 4),
                             decoration: BoxDecoration(
-                              color: AppColors.greyPrimary,
+                              color: Color(0xFF4AC960),
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(
@@ -213,6 +210,12 @@ class DetailCourseScreen extends StatelessWidget {
                         '8.12',
                         0,
                         isActive: true,
+                      ),
+                      _buildCourseItem(
+                        'Topic 1 - Part 2 - Introduction HTML',
+                        '18.12',
+                        0,
+                        isActive: false,
                       ),
                       _buildCourseItem(
                         'Topic 1 - Part 2 - Introduction HTML',
@@ -256,9 +259,9 @@ class DetailCourseScreen extends StatelessWidget {
             style: AppTextStyles.footnoteBold,
           ),
           Icon(
-            isExpanded ? IconlyBold.arrowDown2 : IconlyBold.arrowRight2,
+            isExpanded ? IconlyLight.arrowUp2 : IconlyLight.arrowRight2,
             size: 14,
-            color: AppColors.greyText,
+            color: AppColors.primary,
           ),
         ],
       ),
@@ -283,19 +286,31 @@ class DetailCourseScreen extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            width: 24,
-            height: 24,
-            decoration: const BoxDecoration(
-              color: AppColors.primary,
-              shape: BoxShape.circle,
-            ),
+          CircleAvatar(
+            radius: 12,
+            backgroundColor: AppColors.background,
             child: Center(
-              child: Text(
-                '$progress%',
-                style: AppTextStyles.caption2Regular.copyWith(
-                  color: AppColors.primary,
-                  fontSize: 10,
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xFF185DCF),
+                  ),
+                  children: [
+                    TextSpan(
+                      text: '0',
+                      style: TextStyle(
+                        fontSize: 13,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '%',
+                      style: TextStyle(
+                        fontSize: 8,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

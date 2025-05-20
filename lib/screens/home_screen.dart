@@ -95,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         child: Image(
-                            image: AssetImage('assets/images/Banner.png')),
+                            image: AssetImage('assets/images/banner2.png')),
                       ),
                     ],
                   ),
@@ -146,21 +146,21 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       _buildCard(
                         'UI/UX Design',
-                        'assets/images/image19.png',
+                        'assets/images/image19.jpg',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Web Development',
-                        'assets/images/image19.png',
+                        'assets/images/image18.jpg',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Data Science',
-                        'assets/images/image19.png',
+                        'assets/images/image15.jpg',
                         '10',
                         '20',
                       ),
@@ -195,21 +195,21 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       _buildCard(
                         'UI/UX Design',
-                        'assets/images/image19.png',
+                        'assets/images/image16.jpg',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Web Development',
-                        'assets/images/image19.png',
+                        'assets/images/image17.jpg',
                         '10',
                         '20',
                       ),
                       const SizedBox(width: 6),
                       _buildCard(
                         'Data Science',
-                        'assets/images/image19.png',
+                        'assets/images/image13.jpg',
                         '10',
                         '20',
                       ),

@@ -4,9 +4,11 @@ import 'package:mentora/core/constants/app_colors.dart';
 class AppChip extends StatelessWidget {
   final String title;
   final bool isSelected;
+  final Color? shadowColor;
   const AppChip(
     this.title, {
     required this.isSelected,
+    this.shadowColor,
     super.key,
   });
 
@@ -22,7 +24,7 @@ class AppChip extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             shadows: [
               BoxShadow(
-                color: Color(0x19000000),
+                color: shadowColor ?? Color(0x19000000),
                 blurRadius: 10,
                 offset: Offset(0, 0),
                 spreadRadius: 0,

@@ -73,12 +73,15 @@ class LearningItem extends StatelessWidget {
                       ),
                       child: Text(
                         chapters,
-                        style: AppTextStyles.caption2Regular,
+                        style: AppTextStyles.caption2Regular.copyWith(
+                          letterSpacing: 0,
+                          fontSize: 10,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 2),
+                const SizedBox(height: 1),
                 Text(
                   title,
                   style: AppTextStyles.calloutBold,

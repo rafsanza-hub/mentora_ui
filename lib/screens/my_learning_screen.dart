@@ -30,7 +30,7 @@ class MyLearningScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 23),
+                const SizedBox(height: 22),
                 SizedBox(
                   height: 30,
                   child: ListView(
@@ -43,33 +43,18 @@ class MyLearningScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 31),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Course',
-                      style: AppTextStyles.bodyBold,
-                    ),
-                    InkWell(
-                        child: Text(
-                          'See all',
-                          style: AppTextStyles.caption1Regular.copyWith(
-                            color: AppColors.greySecondary,
-                          ),
-                        ),
-                        onTap: () {
-                          Get.to(() => const MyLearningCourseScreen(),
-                              transition: Transition.rightToLeft,
-                              duration: const Duration(milliseconds: 500));
-                        }),
-                  ],
+
+                // course
+                Text(
+                  'Course',
+                  style: AppTextStyles.bodyBold,
                 ),
                 const SizedBox(height: 12),
                 LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Free',
-                  typeColor: AppColors.greyPrimary,
+                  typeColor: Color(0xFF06B44B),
                   chapters: 'Chapter 0/6',
                   description:
                       'HTML and CSS are the two basic technologies in website creation.',
@@ -94,35 +79,34 @@ class MyLearningScreen extends StatelessWidget {
                   description:
                       'HTML and CSS are the two basic technologies in website creation.',
                 ),
-                const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Bootcamp',
-                      style: AppTextStyles.subheadlineBold,
+                const SizedBox(height: 12),
+                Center(
+                  child: GestureDetector(
+                    child: Text(
+                      'See more',
+                      style: AppTextStyles.caption2Bold,
+                      textAlign: TextAlign.center,
                     ),
-                    InkWell(
-                      child: Text(
-                        'See all',
-                        style: AppTextStyles.caption1Regular.copyWith(
-                          color: AppColors.greySecondary,
-                        ),
-                      ),
-                      onTap: () {
-                        Get.to(() => const MyLearningBootcampScreen(),
-                            transition: Transition.rightToLeft,
-                            duration: const Duration(milliseconds: 500));
-                      },
-                    ),
-                  ],
+                    onTap: () {
+                      Get.to(() => const MyLearningCourseScreen(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500));
+                    },
+                  ),
+                ),
+                const SizedBox(height: 6),
+
+                // bootcamp
+                Text(
+                  'Bootcamp',
+                  style: AppTextStyles.subheadlineBold,
                 ),
                 const SizedBox(height: 12),
                 LearningItem(
                   title: 'Front End HTML, CSS',
                   imageUrl: 'assets/images/image19.png',
                   type: 'Free',
-                  typeColor: AppColors.greyPrimary,
+                  typeColor: Color(0xFF06B44B),
                   chapters: 'Chapter 0/6',
                   description:
                       'HTML and CSS are the two basic technologies in website creation.',
@@ -146,6 +130,21 @@ class MyLearningScreen extends StatelessWidget {
                   chapters: 'Chapter 0/6',
                   description:
                       'HTML and CSS are the two basic technologies in website creation.',
+                ),
+                SizedBox(height: 12),
+                Center(
+                  child: GestureDetector(
+                    child: Text(
+                      'See more',
+                      style: AppTextStyles.caption2Bold,
+                      textAlign: TextAlign.center,
+                    ),
+                    onTap: () {
+                      Get.to(() => const MyLearningBootcampScreen(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500));
+                    },
+                  ),
                 ),
               ],
             ),

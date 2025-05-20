@@ -67,7 +67,7 @@ class BookmarkScreen extends StatelessWidget {
                           style: AppTextStyles.footnoteBold,
                         ),
                         Spacer(),
-                        Icon(IconlyLight.arrowDown2, size: 14)
+                        Icon(IconlyLight.arrowUp2, size: 14)
                       ],
                     ),
                     SizedBox(height: 8),
